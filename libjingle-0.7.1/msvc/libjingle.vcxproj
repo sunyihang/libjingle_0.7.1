@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2FCC9B2C-1645-47A5-A024-DE75EAEBB1EB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libjingle</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>$(SolutionDir)obj\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>$(SolutionDir)obj\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;FEATURE_ENABLE_VOICEMAIL;EXPAT_RELATIVE_PATH;GTEST_RELATIVE_PATH;SRTP_RELATIVE_PATH;XML_STATIC;_ATL_CSTRING_EXPLICIT_CONSTRUCTORS;_CRT_SECURE_NO_WARNINGS;_USE_32BIT_TIME_T;_HAS_EXCEPTIONS=0;WINVER=0x0500;_WIN32_WINNT=0x0501;_WIN32_IE=0x0501;_WINDOWS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\;..\talk\third_party\expat-2.0.1\lib;..\talk\third_party\gtest\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>winmm.lib;</AdditionalDependencies>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;FEATURE_ENABLE_VOICEMAIL;EXPAT_RELATIVE_PATH;GTEST_RELATIVE_PATH;SRTP_RELATIVE_PATH;XML_STATIC;_ATL_CSTRING_EXPLICIT_CONSTRUCTORS;_CRT_SECURE_NO_WARNINGS;_USE_32BIT_TIME_T;_HAS_EXCEPTIONS=0;WINVER=0x0500;_WIN32_WINNT=0x0501;_WIN32_IE=0x0501;_WINDOWS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\;..\talk\third_party\expat-2.0.1\lib;..\talk\third_party\gtest\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>winmm.lib</AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\talk\base/asyncfile.h" />
+    <ClInclude Include="..\talk\base/asynchttprequest.h" />
+    <ClInclude Include="..\talk\base/asyncsocket.h" />
+    <ClInclude Include="..\talk\base/asynctcpsocket.h" />
+    <ClInclude Include="..\talk\base/asyncudpsocket.h" />
+    <ClInclude Include="..\talk\base/autodetectproxy.h" />
+    <ClInclude Include="..\talk\base/bandwidthsmoother.h" />
+    <ClInclude Include="..\talk\base/base64.h" />
+    <ClInclude Include="..\talk\base/basicpacketsocketfactory.h" />
+    <ClInclude Include="..\talk\base/bytebuffer.h" />
+    <ClInclude Include="..\talk\base/checks.h" />
+    <ClInclude Include="..\talk\base/common.h" />
+    <ClInclude Include="..\talk\base/cpumonitor.h" />
+    <ClInclude Include="..\talk\base/crc32.h" />
+    <ClInclude Include="..\talk\base/diskcache.h" />
+    <ClInclude Include="..\talk\base/event.h" />
+    <ClInclude Include="..\talk\base/filelock.h" />
+    <ClInclude Include="..\talk\base/fileutils.h" />
+    <ClInclude Include="..\talk\base/firewallsocketserver.h" />
+    <ClInclude Include="..\talk\base/flags.h" />
+    <ClInclude Include="..\talk\base/helpers.h" />
+    <ClInclude Include="..\talk\base/host.h" />
+    <ClInclude Include="..\talk\base/httpbase.h" />
+    <ClInclude Include="..\talk\base/httpclient.h" />
+    <ClInclude Include="..\talk\base/httpcommon.h" />
+    <ClInclude Include="..\talk\base/httprequest.h" />
+    <ClInclude Include="..\talk\base/httpserver.h" />
+    <ClInclude Include="..\talk\base/ipaddress.h" />
+    <ClInclude Include="..\talk\base/logging.h" />
+    <ClInclude Include="..\talk\base/md5.h" />
+    <ClInclude Include="..\talk\base/messagedigest.h" />
+    <ClInclude Include="..\talk\base/messagehandler.h" />
+    <ClInclude Include="..\talk\base/messagequeue.h" />
+    <ClInclude Include="..\talk\base/multipart.h" />
+    <ClInclude Include="..\talk\base/natserver.h" />
+    <ClInclude Include="..\talk\base/natsocketfactory.h" />
+    <ClInclude Include="..\talk\base/nattypes.h" />
+    <ClInclude Include="..\talk\base/nethelpers.h" />
+    <ClInclude Include="..\talk\base/network.h" />
+    <ClInclude Include="..\talk\base/nssidentity.h" />
+    <ClInclude Include="..\talk\base/nssstreamadapter.h" />
+    <ClInclude Include="..\talk\base/openssladapter.h" />
+    <ClInclude Include="..\talk\base/openssldigest.h" />
+    <ClInclude Include="..\talk\base/opensslidentity.h" />
+    <ClInclude Include="..\talk\base/opensslstreamadapter.h" />
+    <ClInclude Include="..\talk\base/optionsfile.h" />
+    <ClInclude Include="..\talk\base/pathutils.h" />
+    <ClInclude Include="..\talk\base/physicalsocketserver.h" />
+    <ClInclude Include="..\talk\base/proxydetect.h" />
+    <ClInclude Include="..\talk\base/proxyinfo.h" />
+    <ClInclude Include="..\talk\base/proxyserver.h" />
+    <ClInclude Include="..\talk\base/ratelimiter.h" />
+    <ClInclude Include="..\talk\base/ratetracker.h" />
+    <ClInclude Include="..\talk\base/sha1.h" />
+    <ClInclude Include="..\talk\base/sharedexclusivelock.h" />
+    <ClInclude Include="..\talk\base/signalthread.h" />
+    <ClInclude Include="..\talk\base/socketadapters.h" />
+    <ClInclude Include="..\talk\base/socketaddress.h" />
+    <ClInclude Include="..\talk\base/socketaddresspair.h" />
+    <ClInclude Include="..\talk\base/socketpool.h" />
+    <ClInclude Include="..\talk\base/socketstream.h" />
+    <ClInclude Include="..\talk\base/ssladapter.h" />
+    <ClInclude Include="..\talk\base/sslsocketfactory.h" />
+    <ClInclude Include="..\talk\base/sslidentity.h" />
+    <ClInclude Include="..\talk\base/sslstreamadapter.h" />
+    <ClInclude Include="..\talk\base/sslstreamadapterhelper.h" />
+    <ClInclude Include="..\talk\base/stream.h" />
+    <ClInclude Include="..\talk\base/stringencode.h" />
+    <ClInclude Include="..\talk\base/stringutils.h" />
+    <ClInclude Include="..\talk\base/systeminfo.h" />
+    <ClInclude Include="..\talk\base/task.h" />
+    <ClInclude Include="..\talk\base/taskparent.h" />
+    <ClInclude Include="..\talk\base/taskrunner.h" />
+    <ClInclude Include="..\talk\base/testclient.h" />
+    <ClInclude Include="..\talk\base/thread.h" />
+    <ClInclude Include="..\talk\base/timeutils.h" />
+    <ClInclude Include="..\talk\base/timing.h" />
+    <ClInclude Include="..\talk\base/transformadapter.h" />
+    <ClInclude Include="..\talk\base/urlencode.h" />
+    <ClInclude Include="..\talk\base/versionparsing.h" />
+    <ClInclude Include="..\talk\base/virtualsocketserver.h" />
+    <ClInclude Include="..\talk\base/worker.h" />
+    <ClInclude Include="..\talk\base\schanneladapter.h" />
+    <ClInclude Include="..\talk\base\win32.h" />
+    <ClInclude Include="..\talk\base\win32filesystem.h" />
+    <ClInclude Include="..\talk\base\win32regkey.h" />
+    <ClInclude Include="..\talk\base\win32socketinit.h" />
+    <ClInclude Include="..\talk\base\win32socketserver.h" />
+    <ClInclude Include="..\talk\base\win32window.h" />
+    <ClInclude Include="..\talk\base\win32windowpicker.h" />
+    <ClInclude Include="..\talk\base\winfirewall.h" />
+    <ClInclude Include="..\talk\base\winping.h" />
+    <ClInclude Include="..\talk\media\base\capturemanager.h" />
+    <ClInclude Include="..\talk\media\base\capturerenderadapter.h" />
+    <ClInclude Include="..\talk\media\base\codec.h" />
+    <ClInclude Include="..\talk\media\base\constants.h" />
+    <ClInclude Include="..\talk\media\base\cpuid.h" />
+    <ClInclude Include="..\talk\media\base\filemediaengine.h" />
+    <ClInclude Include="..\talk\media\base\hybridvideoengine.h" />
+    <ClInclude Include="..\talk\media\base\mediaengine.h" />
+    <ClInclude Include="..\talk\media\base\mutevideocapturer.h" />
+    <ClInclude Include="..\talk\media\base\rtpdataengine.h" />
+    <ClInclude Include="..\talk\media\base\rtpdump.h" />
+    <ClInclude Include="..\talk\media\base\rtputils.h" />
+    <ClInclude Include="..\talk\media\base\streamparams.h" />
+    <ClInclude Include="..\talk\media\base\videoadapter.h" />
+    <ClInclude Include="..\talk\media\base\videocapturer.h" />
+    <ClInclude Include="..\talk\media\base\videocommon.h" />
+    <ClInclude Include="..\talk\media\base\videoframe.h" />
+    <ClInclude Include="..\talk\media\devices\devicemanager.h" />
+    <ClInclude Include="..\talk\media\devices\filevideocapturer.h" />
+    <ClInclude Include="..\talk\media\devices\gdivideorenderer.h" />
+    <ClInclude Include="..\talk\media\devices\win32devicemanager.h" />
+    <ClInclude Include="..\talk\p2p\base\constants.h" />
+    <ClInclude Include="..\talk\p2p\base\dtlstransportchannel.h" />
+    <ClInclude Include="..\talk\p2p\base\p2ptransport.h" />
+    <ClInclude Include="..\talk\p2p\base\p2ptransportchannel.h" />
+    <ClInclude Include="..\talk\p2p\base\parsing.h" />
+    <ClInclude Include="..\talk\p2p\base\port.h" />
+    <ClInclude Include="..\talk\p2p\base\portallocator.h" />
+    <ClInclude Include="..\talk\p2p\base\portallocatorsessionproxy.h" />
+    <ClInclude Include="..\talk\p2p\base\portproxy.h" />
+    <ClInclude Include="..\talk\p2p\base\pseudotcp.h" />
+    <ClInclude Include="..\talk\p2p\base\rawtransport.h" />
+    <ClInclude Include="..\talk\p2p\base\rawtransportchannel.h" />
+    <ClInclude Include="..\talk\p2p\base\relayport.h" />
+    <ClInclude Include="..\talk\p2p\base\relayserver.h" />
+    <ClInclude Include="..\talk\p2p\base\session.h" />
+    <ClInclude Include="..\talk\p2p\base\sessiondescription.h" />
+    <ClInclude Include="..\talk\p2p\base\sessionmanager.h" />
+    <ClInclude Include="..\talk\p2p\base\sessionmessages.h" />
+    <ClInclude Include="..\talk\p2p\base\stun.h" />
+    <ClInclude Include="..\talk\p2p\base\stunport.h" />
+    <ClInclude Include="..\talk\p2p\base\stunrequest.h" />
+    <ClInclude Include="..\talk\p2p\base\stunserver.h" />
+    <ClInclude Include="..\talk\p2p\base\tcpport.h" />
+    <ClInclude Include="..\talk\p2p\base\transport.h" />
+    <ClInclude Include="..\talk\p2p\base\transportchannel.h" />
+    <ClInclude Include="..\talk\p2p\base\transportchannelproxy.h" />
+    <ClInclude Include="..\talk\p2p\base\transportdescriptionfactory.h" />
+    <ClInclude Include="..\talk\p2p\base\turnport.h" />
+    <ClInclude Include="..\talk\p2p\base\turnserver.h" />
+    <ClInclude Include="..\talk\p2p\client\basicportallocator.h" />
+    <ClInclude Include="..\talk\p2p\client\connectivitychecker.h" />
+    <ClInclude Include="..\talk\p2p\client\httpportallocator.h" />
+    <ClInclude Include="..\talk\p2p\client\socketmonitor.h" />
+    <ClInclude Include="..\talk\session\media\audiomonitor.h" />
+    <ClInclude Include="..\talk\session\media\call.h" />
+    <ClInclude Include="..\talk\session\media\channel.h" />
+    <ClInclude Include="..\talk\session\media\channelmanager.h" />
+    <ClInclude Include="..\talk\session\media\currentspeakermonitor.h" />
+    <ClInclude Include="..\talk\session\media\mediamessages.h" />
+    <ClInclude Include="..\talk\session\media\mediamonitor.h" />
+    <ClInclude Include="..\talk\session\media\mediarecorder.h" />
+    <ClInclude Include="..\talk\session\media\mediasession.h" />
+    <ClInclude Include="..\talk\session\media\mediasessionclient.h" />
+    <ClInclude Include="..\talk\session\media\rtcpmuxfilter.h" />
+    <ClInclude Include="..\talk\session\media\soundclip.h" />
+    <ClInclude Include="..\talk\session\media\srtpfilter.h" />
+    <ClInclude Include="..\talk\session\media\ssrcmuxfilter.h" />
+    <ClInclude Include="..\talk\session\media\typingmonitor.h" />
+    <ClInclude Include="..\talk\session\tunnel\pseudotcpchannel.h" />
+    <ClInclude Include="..\talk\session\tunnel\securetunnelsessionclient.h" />
+    <ClInclude Include="..\talk\session\tunnel\tunnelsessionclient.h" />
+    <ClInclude Include="..\talk\sound\nullsoundsystem.h" />
+    <ClInclude Include="..\talk\sound\nullsoundsystemfactory.h" />
+    <ClInclude Include="..\talk\sound\platformsoundsystem.h" />
+    <ClInclude Include="..\talk\sound\platformsoundsystemfactory.h" />
+    <ClInclude Include="..\talk\sound\soundsysteminterface.h" />
+    <ClInclude Include="..\talk\sound\soundsystemproxy.h" />
+    <ClInclude Include="..\talk\xmllite\qname.h" />
+    <ClInclude Include="..\talk\xmllite\xmlbuilder.h" />
+    <ClInclude Include="..\talk\xmllite\xmlconstants.h" />
+    <ClInclude Include="..\talk\xmllite\xmlelement.h" />
+    <ClInclude Include="..\talk\xmllite\xmlnsstack.h" />
+    <ClInclude Include="..\talk\xmllite\xmlparser.h" />
+    <ClInclude Include="..\talk\xmllite\xmlprinter.h" />
+    <ClInclude Include="..\talk\xmpp\constants.h" />
+    <ClInclude Include="..\talk\xmpp\discoitemsquerytask.h" />
+    <ClInclude Include="..\talk\xmpp\hangoutpubsubclient.h" />
+    <ClInclude Include="..\talk\xmpp\iqtask.h" />
+    <ClInclude Include="..\talk\xmpp\jid.h" />
+    <ClInclude Include="..\talk\xmpp\moduleimpl.h" />
+    <ClInclude Include="..\talk\xmpp\mucroomconfigtask.h" />
+    <ClInclude Include="..\talk\xmpp\mucroomdiscoverytask.h" />
+    <ClInclude Include="..\talk\xmpp\mucroomlookuptask.h" />
+    <ClInclude Include="..\talk\xmpp\mucroomuniquehangoutidtask.h" />
+    <ClInclude Include="..\talk\xmpp\pingtask.h" />
+    <ClInclude Include="..\talk\xmpp\pubsubclient.h" />
+    <ClInclude Include="..\talk\xmpp\pubsubtasks.h" />
+    <ClInclude Include="..\talk\xmpp\pubsub_task.h" />
+    <ClInclude Include="..\talk\xmpp\receivetask.h" />
+    <ClInclude Include="..\talk\xmpp\rostermoduleimpl.h" />
+    <ClInclude Include="..\talk\xmpp\saslmechanism.h" />
+    <ClInclude Include="..\talk\xmpp\xmppauth.h" />
+    <ClInclude Include="..\talk\xmpp\xmppclient.h" />
+    <ClInclude Include="..\talk\xmpp\xmppengineimpl.h" />
+    <ClInclude Include="..\talk\xmpp\xmpplogintask.h" />
+    <ClInclude Include="..\talk\xmpp\xmpppump.h" />
+    <ClInclude Include="..\talk\xmpp\xmppsocket.h" />
+    <ClInclude Include="..\talk\xmpp\xmppstanzaparser.h" />
+    <ClInclude Include="..\talk\xmpp\xmpptask.h" />
+    <ClInclude Include="..\talk\xmpp\xmppthread.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\talk\base\asyncfile.cc" />
+    <ClCompile Include="..\talk\base\asynchttprequest.cc" />
+    <ClCompile Include="..\talk\base\asyncsocket.cc" />
+    <ClCompile Include="..\talk\base\asynctcpsocket.cc" />
+    <ClCompile Include="..\talk\base\asyncudpsocket.cc" />
+    <ClCompile Include="..\talk\base\autodetectproxy.cc" />
+    <ClCompile Include="..\talk\base\bandwidthsmoother.cc" />
+    <ClCompile Include="..\talk\base\base64.cc" />
+    <ClCompile Include="..\talk\base\basicpacketsocketfactory.cc" />
+    <ClCompile Include="..\talk\base\bytebuffer.cc" />
+    <ClCompile Include="..\talk\base\checks.cc" />
+    <ClCompile Include="..\talk\base\common.cc" />
+    <ClCompile Include="..\talk\base\cpumonitor.cc" />
+    <ClCompile Include="..\talk\base\crc32.cc" />
+    <ClCompile Include="..\talk\base\diskcache.cc" />
+    <ClCompile Include="..\talk\base\diskcache_win32.cc" />
+    <ClCompile Include="..\talk\base\event.cc" />
+    <ClCompile Include="..\talk\base\filelock.cc" />
+    <ClCompile Include="..\talk\base\fileutils.cc" />
+    <ClCompile Include="..\talk\base\firewallsocketserver.cc" />
+    <ClCompile Include="..\talk\base\flags.cc" />
+    <ClCompile Include="..\talk\base\helpers.cc" />
+    <ClCompile Include="..\talk\base\host.cc" />
+    <ClCompile Include="..\talk\base\httpbase.cc" />
+    <ClCompile Include="..\talk\base\httpclient.cc" />
+    <ClCompile Include="..\talk\base\httpcommon.cc" />
+    <ClCompile Include="..\talk\base\httprequest.cc" />
+    <ClCompile Include="..\talk\base\httpserver.cc" />
+    <ClCompile Include="..\talk\base\ipaddress.cc" />
+    <ClCompile Include="..\talk\base\logging.cc" />
+    <ClCompile Include="..\talk\base\md5.cc" />
+    <ClCompile Include="..\talk\base\messagedigest.cc" />
+    <ClCompile Include="..\talk\base\messagehandler.cc" />
+    <ClCompile Include="..\talk\base\messagequeue.cc" />
+    <ClCompile Include="..\talk\base\multipart.cc" />
+    <ClCompile Include="..\talk\base\natserver.cc" />
+    <ClCompile Include="..\talk\base\natsocketfactory.cc" />
+    <ClCompile Include="..\talk\base\nattypes.cc" />
+    <ClCompile Include="..\talk\base\nethelpers.cc" />
+    <ClCompile Include="..\talk\base\network.cc" />
+    <ClCompile Include="..\talk\base\nssidentity.cc" />
+    <ClCompile Include="..\talk\base\nssstreamadapter.cc" />
+    <ClCompile Include="..\talk\base\openssladapter.cc" />
+    <ClCompile Include="..\talk\base\openssldigest.cc" />
+    <ClCompile Include="..\talk\base\opensslidentity.cc" />
+    <ClCompile Include="..\talk\base\opensslstreamadapter.cc" />
+    <ClCompile Include="..\talk\base\optionsfile.cc" />
+    <ClCompile Include="..\talk\base\pathutils.cc" />
+    <ClCompile Include="..\talk\base\physicalsocketserver.cc" />
+    <ClCompile Include="..\talk\base\proxydetect.cc" />
+    <ClCompile Include="..\talk\base\proxyinfo.cc" />
+    <ClCompile Include="..\talk\base\proxyserver.cc" />
+    <ClCompile Include="..\talk\base\ratelimiter.cc" />
+    <ClCompile Include="..\talk\base\ratetracker.cc" />
+    <ClCompile Include="..\talk\base\schanneladapter.cc" />
+    <ClCompile Include="..\talk\base\sha1.cc" />
+    <ClCompile Include="..\talk\base\sharedexclusivelock.cc" />
+    <ClCompile Include="..\talk\base\signalthread.cc" />
+    <ClCompile Include="..\talk\base\socketadapters.cc" />
+    <ClCompile Include="..\talk\base\socketaddress.cc" />
+    <ClCompile Include="..\talk\base\socketaddresspair.cc" />
+    <ClCompile Include="..\talk\base\socketpool.cc" />
+    <ClCompile Include="..\talk\base\socketstream.cc" />
+    <ClCompile Include="..\talk\base\ssladapter.cc" />
+    <ClCompile Include="..\talk\base\sslidentity.cc" />
+    <ClCompile Include="..\talk\base\sslsocketfactory.cc" />
+    <ClCompile Include="..\talk\base\sslstreamadapter.cc" />
+    <ClCompile Include="..\talk\base\sslstreamadapterhelper.cc" />
+    <ClCompile Include="..\talk\base\stream.cc" />
+    <ClCompile Include="..\talk\base\stringencode.cc" />
+    <ClCompile Include="..\talk\base\stringutils.cc" />
+    <ClCompile Include="..\talk\base\systeminfo.cc" />
+    <ClCompile Include="..\talk\base\task.cc" />
+    <ClCompile Include="..\talk\base\taskparent.cc" />
+    <ClCompile Include="..\talk\base\taskrunner.cc" />
+    <ClCompile Include="..\talk\base\testclient.cc" />
+    <ClCompile Include="..\talk\base\thread.cc" />
+    <ClCompile Include="..\talk\base\timeutils.cc" />
+    <ClCompile Include="..\talk\base\timing.cc" />
+    <ClCompile Include="..\talk\base\transformadapter.cc" />
+    <ClCompile Include="..\talk\base\urlencode.cc" />
+    <ClCompile Include="..\talk\base\versionparsing.cc" />
+    <ClCompile Include="..\talk\base\virtualsocketserver.cc" />
+    <ClCompile Include="..\talk\base\win32.cc" />
+    <ClCompile Include="..\talk\base\win32filesystem.cc" />
+    <ClCompile Include="..\talk\base\win32regkey.cc" />
+    <ClCompile Include="..\talk\base\win32securityerrors.cc" />
+    <ClCompile Include="..\talk\base\win32socketinit.cc" />
+    <ClCompile Include="..\talk\base\win32socketserver.cc" />
+    <ClCompile Include="..\talk\base\win32window.cc" />
+    <ClCompile Include="..\talk\base\win32windowpicker.cc" />
+    <ClCompile Include="..\talk\base\winfirewall.cc" />
+    <ClCompile Include="..\talk\base\winping.cc" />
+    <ClCompile Include="..\talk\base\worker.cc" />
+    <ClCompile Include="..\talk\media\base\capturemanager.cc" />
+    <ClCompile Include="..\talk\media\base\capturerenderadapter.cc" />
+    <ClCompile Include="..\talk\media\base\codec.cc" />
+    <ClCompile Include="..\talk\media\base\constants_media.cc" />
+    <ClCompile Include="..\talk\media\base\cpuid.cc" />
+    <ClCompile Include="..\talk\media\base\filemediaengine.cc" />
+    <ClCompile Include="..\talk\media\base\hybridvideoengine.cc" />
+    <ClCompile Include="..\talk\media\base\mediaengine.cc" />
+    <ClCompile Include="..\talk\media\base\mutevideocapturer.cc" />
+    <ClCompile Include="..\talk\media\base\rtpdataengine.cc" />
+    <ClCompile Include="..\talk\media\base\rtpdump.cc" />
+    <ClCompile Include="..\talk\media\base\rtputils.cc" />
+    <ClCompile Include="..\talk\media\base\streamparams.cc" />
+    <ClCompile Include="..\talk\media\base\videoadapter.cc" />
+    <ClCompile Include="..\talk\media\base\videocapturer.cc" />
+    <ClCompile Include="..\talk\media\base\videocommon.cc" />
+    <ClCompile Include="..\talk\media\base\videoframe.cc" />
+    <ClCompile Include="..\talk\media\devices\devicemanager.cc" />
+    <ClCompile Include="..\talk\media\devices\filevideocapturer.cc" />
+    <ClCompile Include="..\talk\media\devices\gdivideorenderer.cc" />
+    <ClCompile Include="..\talk\media\devices\win32deviceinfo.cc" />
+    <ClCompile Include="..\talk\media\devices\win32devicemanager.cc" />
+    <ClCompile Include="..\talk\p2p\base\constants_p2p.cc" />
+    <ClCompile Include="..\talk\p2p\base\dtlstransportchannel.cc" />
+    <ClCompile Include="..\talk\p2p\base\p2ptransport.cc" />
+    <ClCompile Include="..\talk\p2p\base\p2ptransportchannel.cc" />
+    <ClCompile Include="..\talk\p2p\base\parsing.cc" />
+    <ClCompile Include="..\talk\p2p\base\port.cc" />
+    <ClCompile Include="..\talk\p2p\base\portallocator.cc" />
+    <ClCompile Include="..\talk\p2p\base\portallocatorsessionproxy.cc" />
+    <ClCompile Include="..\talk\p2p\base\portproxy.cc" />
+    <ClCompile Include="..\talk\p2p\base\pseudotcp.cc" />
+    <ClCompile Include="..\talk\p2p\base\rawtransport.cc" />
+    <ClCompile Include="..\talk\p2p\base\rawtransportchannel.cc" />
+    <ClCompile Include="..\talk\p2p\base\relayport.cc" />
+    <ClCompile Include="..\talk\p2p\base\relayserver.cc" />
+    <ClCompile Include="..\talk\p2p\base\session.cc" />
+    <ClCompile Include="..\talk\p2p\base\sessiondescription.cc" />
+    <ClCompile Include="..\talk\p2p\base\sessionmanager.cc" />
+    <ClCompile Include="..\talk\p2p\base\sessionmessages.cc" />
+    <ClCompile Include="..\talk\p2p\base\stun.cc" />
+    <ClCompile Include="..\talk\p2p\base\stunport.cc" />
+    <ClCompile Include="..\talk\p2p\base\stunrequest.cc" />
+    <ClCompile Include="..\talk\p2p\base\stunserver.cc" />
+    <ClCompile Include="..\talk\p2p\base\tcpport.cc" />
+    <ClCompile Include="..\talk\p2p\base\transport.cc" />
+    <ClCompile Include="..\talk\p2p\base\transportchannel.cc" />
+    <ClCompile Include="..\talk\p2p\base\transportchannelproxy.cc" />
+    <ClCompile Include="..\talk\p2p\base\transportdescriptionfactory.cc" />
+    <ClCompile Include="..\talk\p2p\base\turnport.cc" />
+    <ClCompile Include="..\talk\p2p\base\turnserver.cc" />
+    <ClCompile Include="..\talk\p2p\client\basicportallocator.cc" />
+    <ClCompile Include="..\talk\p2p\client\connectivitychecker.cc" />
+    <ClCompile Include="..\talk\p2p\client\httpportallocator.cc" />
+    <ClCompile Include="..\talk\p2p\client\socketmonitor.cc" />
+    <ClCompile Include="..\talk\session\media\audiomonitor.cc" />
+    <ClCompile Include="..\talk\session\media\call.cc" />
+    <ClCompile Include="..\talk\session\media\channel.cc" />
+    <ClCompile Include="..\talk\session\media\channelmanager.cc" />
+    <ClCompile Include="..\talk\session\media\currentspeakermonitor.cc" />
+    <ClCompile Include="..\talk\session\media\mediamessages.cc" />
+    <ClCompile Include="..\talk\session\media\mediamonitor.cc" />
+    <ClCompile Include="..\talk\session\media\mediarecorder.cc" />
+    <ClCompile Include="..\talk\session\media\mediasession.cc" />
+    <ClCompile Include="..\talk\session\media\mediasessionclient.cc" />
+    <ClCompile Include="..\talk\session\media\rtcpmuxfilter.cc" />
+    <ClCompile Include="..\talk\session\media\soundclip.cc" />
+    <ClCompile Include="..\talk\session\media\srtpfilter.cc" />
+    <ClCompile Include="..\talk\session\media\ssrcmuxfilter.cc" />
+    <ClCompile Include="..\talk\session\media\typingmonitor.cc" />
+    <ClCompile Include="..\talk\session\tunnel\pseudotcpchannel.cc" />
+    <ClCompile Include="..\talk\session\tunnel\securetunnelsessionclient.cc" />
+    <ClCompile Include="..\talk\session\tunnel\tunnelsessionclient.cc" />
+    <ClCompile Include="..\talk\sound\nullsoundsystem.cc" />
+    <ClCompile Include="..\talk\sound\nullsoundsystemfactory.cc" />
+    <ClCompile Include="..\talk\sound\platformsoundsystem.cc" />
+    <ClCompile Include="..\talk\sound\platformsoundsystemfactory.cc" />
+    <ClCompile Include="..\talk\sound\soundsysteminterface.cc" />
+    <ClCompile Include="..\talk\sound\soundsystemproxy.cc" />
+    <ClCompile Include="..\talk\xmllite\qname.cc" />
+    <ClCompile Include="..\talk\xmllite\xmlbuilder.cc" />
+    <ClCompile Include="..\talk\xmllite\xmlconstants.cc" />
+    <ClCompile Include="..\talk\xmllite\xmlelement.cc" />
+    <ClCompile Include="..\talk\xmllite\xmlnsstack.cc" />
+    <ClCompile Include="..\talk\xmllite\xmlparser.cc" />
+    <ClCompile Include="..\talk\xmllite\xmlprinter.cc" />
+    <ClCompile Include="..\talk\xmpp\chatroommoduleimpl.cc" />
+    <ClCompile Include="..\talk\xmpp\constants_xmpp.cc" />
+    <ClCompile Include="..\talk\xmpp\discoitemsquerytask.cc" />
+    <ClCompile Include="..\talk\xmpp\hangoutpubsubclient.cc" />
+    <ClCompile Include="..\talk\xmpp\iqtask.cc" />
+    <ClCompile Include="..\talk\xmpp\jid.cc" />
+    <ClCompile Include="..\talk\xmpp\moduleimpl.cc" />
+    <ClCompile Include="..\talk\xmpp\mucroomconfigtask.cc" />
+    <ClCompile Include="..\talk\xmpp\mucroomdiscoverytask.cc" />
+    <ClCompile Include="..\talk\xmpp\mucroomlookuptask.cc" />
+    <ClCompile Include="..\talk\xmpp\mucroomuniquehangoutidtask.cc" />
+    <ClCompile Include="..\talk\xmpp\pingtask.cc" />
+    <ClCompile Include="..\talk\xmpp\pubsubclient.cc" />
+    <ClCompile Include="..\talk\xmpp\pubsubtasks.cc" />
+    <ClCompile Include="..\talk\xmpp\pubsub_task.cc" />
+    <ClCompile Include="..\talk\xmpp\receivetask.cc" />
+    <ClCompile Include="..\talk\xmpp\rostermoduleimpl.cc" />
+    <ClCompile Include="..\talk\xmpp\saslmechanism.cc" />
+    <ClCompile Include="..\talk\xmpp\xmppauth.cc" />
+    <ClCompile Include="..\talk\xmpp\xmppclient.cc" />
+    <ClCompile Include="..\talk\xmpp\xmppengineimpl.cc" />
+    <ClCompile Include="..\talk\xmpp\xmppengineimpl_iq.cc" />
+    <ClCompile Include="..\talk\xmpp\xmpplogintask.cc" />
+    <ClCompile Include="..\talk\xmpp\xmpppump.cc" />
+    <ClCompile Include="..\talk\xmpp\xmppsocket.cc" />
+    <ClCompile Include="..\talk\xmpp\xmppstanzaparser.cc" />
+    <ClCompile Include="..\talk\xmpp\xmpptask.cc" />
+    <ClCompile Include="..\talk\xmpp\xmppthread.cc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

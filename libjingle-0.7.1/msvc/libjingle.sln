@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libjingle", "libjingle.vcxproj", "{2FCC9B2C-1645-47A5-A024-DE75EAEBB1EB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "call", "call.vcxproj", "{11E1FA7B-DC18-44D0-B78C-AC4D402FDE9E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2FCC9B2C-1645-47A5-A024-DE75EAEBB1EB} = {2FCC9B2C-1645-47A5-A024-DE75EAEBB1EB}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FCC9B2C-1645-47A5-A024-DE75EAEBB1EB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2FCC9B2C-1645-47A5-A024-DE75EAEBB1EB}.Debug|Win32.Build.0 = Debug|Win32
+		{2FCC9B2C-1645-47A5-A024-DE75EAEBB1EB}.Release|Win32.ActiveCfg = Release|Win32
+		{2FCC9B2C-1645-47A5-A024-DE75EAEBB1EB}.Release|Win32.Build.0 = Release|Win32
+		{11E1FA7B-DC18-44D0-B78C-AC4D402FDE9E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{11E1FA7B-DC18-44D0-B78C-AC4D402FDE9E}.Debug|Win32.Build.0 = Debug|Win32
+		{11E1FA7B-DC18-44D0-B78C-AC4D402FDE9E}.Release|Win32.ActiveCfg = Release|Win32
+		{11E1FA7B-DC18-44D0-B78C-AC4D402FDE9E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

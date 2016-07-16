@@ -1,0 +1,1332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\base">
+      <UniqueIdentifier>{a2e0971e-16a4-41ff-86c1-ef2ebac4134f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\base">
+      <UniqueIdentifier>{6fc455ec-625c-4630-b5b4-bb0448d2937d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\p2p">
+      <UniqueIdentifier>{4011c10f-0209-4a87-bc2b-250c0d8e8e24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\p2p\base">
+      <UniqueIdentifier>{18d5015c-e1d6-46a1-aece-2f935a59b019}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\p2p">
+      <UniqueIdentifier>{91cdef15-698d-4032-abd0-c93ebede9098}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\p2p\base">
+      <UniqueIdentifier>{6b0da9c6-75e6-4944-8c75-8faae494c09a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\p2p\client">
+      <UniqueIdentifier>{9ab0feff-4e6a-414d-8688-d40681067ef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\p2p\client">
+      <UniqueIdentifier>{d662b594-8443-402e-945d-a3f9246d9e36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\session">
+      <UniqueIdentifier>{f3070963-ff27-4e53-b104-a547fea36ffe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\session">
+      <UniqueIdentifier>{53803131-d83c-4479-a0f0-427eb8b0e452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\session\tunnel">
+      <UniqueIdentifier>{d64c2a42-4628-49dc-aa3a-88bed69db68b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\session\tunnel">
+      <UniqueIdentifier>{96181c8b-3e06-40b9-8a63-c183cf92d824}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\media">
+      <UniqueIdentifier>{81f2c593-29af-43b5-bba4-2abeb0be1d91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\media\base">
+      <UniqueIdentifier>{95d5ea78-090e-4e90-8eae-01b772af7b12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\media">
+      <UniqueIdentifier>{c1567c19-1d99-41a4-93e1-340ea78f4231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\media\base">
+      <UniqueIdentifier>{8f803683-3b73-4fc8-b5f4-01790642004f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\media\devices">
+      <UniqueIdentifier>{26466b42-ef12-482a-b3df-f00718034846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\media\devices">
+      <UniqueIdentifier>{463f1ebe-9c68-4ddc-a398-fc0ccca0e935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\session\media">
+      <UniqueIdentifier>{c5b84292-aeb5-491e-987d-713b2c72c26a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\session\media">
+      <UniqueIdentifier>{5a390e65-71ac-4174-8ca9-f258924def5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sound">
+      <UniqueIdentifier>{2190b7d8-f94d-4e68-ab08-b5e91b99b6a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sound">
+      <UniqueIdentifier>{e45702a5-7e96-4781-9be3-1002d8a696a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\xmllite">
+      <UniqueIdentifier>{942986a6-4a95-4642-b287-58fe7fd24f4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\xmllite">
+      <UniqueIdentifier>{21786b0e-3a8c-4a10-b62b-628625075c5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\xmpp">
+      <UniqueIdentifier>{07ac3178-a027-4e4b-a9b3-c883b572fef5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\xmpp">
+      <UniqueIdentifier>{6dbcc498-f17a-4d3e-bde4-d2be77722594}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\talk\base/asyncfile.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/worker.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/asynchttprequest.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/asyncsocket.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/asynctcpsocket.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/asyncudpsocket.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/autodetectproxy.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/bandwidthsmoother.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/base64.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/basicpacketsocketfactory.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/bytebuffer.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/checks.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/common.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/cpumonitor.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/crc32.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/diskcache.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/event.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/filelock.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/fileutils.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/firewallsocketserver.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/flags.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/helpers.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/host.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/httpbase.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/httpclient.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/httpcommon.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/httprequest.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/httpserver.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/ipaddress.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/logging.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/md5.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/messagedigest.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/messagehandler.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/messagequeue.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/multipart.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/natserver.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/natsocketfactory.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/nattypes.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/nethelpers.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/network.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/nssidentity.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/nssstreamadapter.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/openssladapter.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/openssldigest.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/opensslidentity.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/opensslstreamadapter.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/optionsfile.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/pathutils.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/physicalsocketserver.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/proxydetect.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/proxyinfo.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/proxyserver.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/ratelimiter.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/ratetracker.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/sha1.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/sharedexclusivelock.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/signalthread.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/socketadapters.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/socketaddress.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/socketaddresspair.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/socketpool.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/socketstream.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/ssladapter.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/sslidentity.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/sslsocketfactory.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/sslstreamadapter.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/sslstreamadapterhelper.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/stream.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/stringencode.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/stringutils.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/systeminfo.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/task.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/taskparent.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/taskrunner.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/testclient.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/thread.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/timeutils.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/timing.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/transformadapter.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/urlencode.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/versionparsing.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base/virtualsocketserver.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\constants.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\dtlstransportchannel.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\p2ptransport.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\p2ptransportchannel.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\parsing.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\port.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\portallocator.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\portallocatorsessionproxy.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\portproxy.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\pseudotcp.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\rawtransport.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\rawtransportchannel.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\relayport.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\relayserver.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\session.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\sessiondescription.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\sessionmanager.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\sessionmessages.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\stun.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\stunport.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\stunrequest.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\stunserver.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\tcpport.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\transport.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\transportchannel.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\transportchannelproxy.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\transportdescriptionfactory.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\turnport.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\base\turnserver.h">
+      <Filter>Header Files\p2p\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\client\basicportallocator.h">
+      <Filter>Header Files\p2p\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\client\connectivitychecker.h">
+      <Filter>Header Files\p2p\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\client\httpportallocator.h">
+      <Filter>Header Files\p2p\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\p2p\client\socketmonitor.h">
+      <Filter>Header Files\p2p\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\tunnel\pseudotcpchannel.h">
+      <Filter>Header Files\session\tunnel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\tunnel\securetunnelsessionclient.h">
+      <Filter>Header Files\session\tunnel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\tunnel\tunnelsessionclient.h">
+      <Filter>Header Files\session\tunnel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\capturemanager.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\capturerenderadapter.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\codec.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\constants.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\cpuid.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\filemediaengine.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\hybridvideoengine.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\mediaengine.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\mutevideocapturer.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\rtpdataengine.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\rtpdump.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\rtputils.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\streamparams.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\videoadapter.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\videocapturer.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\videocommon.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\base\videoframe.h">
+      <Filter>Header Files\media\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\devices\devicemanager.h">
+      <Filter>Header Files\media\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\devices\filevideocapturer.h">
+      <Filter>Header Files\media\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\audiomonitor.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\call.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\channel.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\channelmanager.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\currentspeakermonitor.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\mediamessages.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\mediamonitor.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\mediarecorder.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\mediasession.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\mediasessionclient.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\rtcpmuxfilter.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\soundclip.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\srtpfilter.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\ssrcmuxfilter.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\session\media\typingmonitor.h">
+      <Filter>Header Files\session\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\sound\nullsoundsystem.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\sound\nullsoundsystemfactory.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\sound\platformsoundsystem.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\sound\platformsoundsystemfactory.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\sound\soundsysteminterface.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\sound\soundsystemproxy.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmllite\qname.h">
+      <Filter>Header Files\xmllite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmllite\xmlbuilder.h">
+      <Filter>Header Files\xmllite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmllite\xmlconstants.h">
+      <Filter>Header Files\xmllite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmllite\xmlelement.h">
+      <Filter>Header Files\xmllite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmllite\xmlnsstack.h">
+      <Filter>Header Files\xmllite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmllite\xmlparser.h">
+      <Filter>Header Files\xmllite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmllite\xmlprinter.h">
+      <Filter>Header Files\xmllite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\constants.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\discoitemsquerytask.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\hangoutpubsubclient.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\iqtask.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\jid.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\moduleimpl.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\mucroomconfigtask.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\mucroomdiscoverytask.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\mucroomlookuptask.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\mucroomuniquehangoutidtask.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\pingtask.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\pubsub_task.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\pubsubclient.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\pubsubtasks.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\receivetask.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\rostermoduleimpl.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\saslmechanism.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\xmppauth.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\xmppclient.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\xmppengineimpl.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\xmpplogintask.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\xmpppump.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\xmppsocket.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\xmppstanzaparser.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\xmpptask.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\xmpp\xmppthread.h">
+      <Filter>Header Files\xmpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base\win32.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base\win32filesystem.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base\win32regkey.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base\win32socketinit.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base\win32socketserver.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base\win32window.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base\win32windowpicker.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base\winfirewall.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base\winping.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\devices\gdivideorenderer.h">
+      <Filter>Header Files\media\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\media\devices\win32devicemanager.h">
+      <Filter>Header Files\media\devices</Filter>
+    </ClInclude>
+    <ClInclude Include="..\talk\base\schanneladapter.h">
+      <Filter>Header Files\base</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\talk\base\worker.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\schanneladapter.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\diskcache_win32.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\win32socketserver.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\win32window.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\winfirewall.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\winping.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\devices\gdivideorenderer.cc">
+      <Filter>Source Files\media\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\devices\win32deviceinfo.cc">
+      <Filter>Source Files\media\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\devices\win32devicemanager.cc">
+      <Filter>Source Files\media\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\devices\filevideocapturer.cc">
+      <Filter>Source Files\media\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\devices\devicemanager.cc">
+      <Filter>Source Files\media\devices</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\capturemanager.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\capturerenderadapter.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\codec.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\cpuid.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\filemediaengine.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\hybridvideoengine.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\mediaengine.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\mutevideocapturer.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\rtpdataengine.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\rtpdump.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\rtputils.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\streamparams.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\videoadapter.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\videocapturer.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\videocommon.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\videoframe.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\chatroommoduleimpl.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\xmppthread.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\discoitemsquerytask.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\hangoutpubsubclient.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\iqtask.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\jid.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\moduleimpl.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\mucroomconfigtask.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\mucroomdiscoverytask.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\mucroomlookuptask.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\mucroomuniquehangoutidtask.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\pingtask.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\pubsub_task.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\pubsubclient.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\pubsubtasks.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\receivetask.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\rostermoduleimpl.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\saslmechanism.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\xmppclient.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\xmppengineimpl.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\xmppengineimpl_iq.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\xmpplogintask.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\xmpppump.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\xmppsocket.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\xmppstanzaparser.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\xmpptask.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\sound\nullsoundsystem.cc">
+      <Filter>Source Files\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\sound\soundsystemproxy.cc">
+      <Filter>Source Files\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\sound\platformsoundsystem.cc">
+      <Filter>Source Files\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\sound\platformsoundsystemfactory.cc">
+      <Filter>Source Files\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\sound\soundsysteminterface.cc">
+      <Filter>Source Files\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\audiomonitor.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\typingmonitor.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\call.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\channel.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\channelmanager.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\currentspeakermonitor.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\mediamessages.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\mediamonitor.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\mediarecorder.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\mediasession.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\mediasessionclient.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\rtcpmuxfilter.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\soundclip.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\srtpfilter.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\media\ssrcmuxfilter.cc">
+      <Filter>Source Files\session\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\tunnel\pseudotcpchannel.cc">
+      <Filter>Source Files\session\tunnel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\tunnel\tunnelsessionclient.cc">
+      <Filter>Source Files\session\tunnel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\session\tunnel\securetunnelsessionclient.cc">
+      <Filter>Source Files\session\tunnel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\turnserver.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\dtlstransportchannel.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\p2ptransport.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\p2ptransportchannel.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\parsing.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\port.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\portallocator.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\portallocatorsessionproxy.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\portproxy.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\pseudotcp.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\rawtransport.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\rawtransportchannel.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\relayport.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\relayserver.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\session.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\sessiondescription.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\sessionmanager.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\sessionmessages.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\stun.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\stunport.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\stunrequest.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\stunserver.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\tcpport.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\transport.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\transportchannel.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\transportchannelproxy.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\transportdescriptionfactory.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\turnport.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\client\basicportallocator.cc">
+      <Filter>Source Files\p2p\client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\client\socketmonitor.cc">
+      <Filter>Source Files\p2p\client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\client\connectivitychecker.cc">
+      <Filter>Source Files\p2p\client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\client\httpportallocator.cc">
+      <Filter>Source Files\p2p\client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmllite\qname.cc">
+      <Filter>Source Files\xmllite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmllite\xmlprinter.cc">
+      <Filter>Source Files\xmllite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmllite\xmlbuilder.cc">
+      <Filter>Source Files\xmllite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmllite\xmlconstants.cc">
+      <Filter>Source Files\xmllite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmllite\xmlelement.cc">
+      <Filter>Source Files\xmllite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmllite\xmlnsstack.cc">
+      <Filter>Source Files\xmllite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmllite\xmlparser.cc">
+      <Filter>Source Files\xmllite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\media\base\constants_media.cc">
+      <Filter>Source Files\media\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\constants_xmpp.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\p2p\base\constants_p2p.cc">
+      <Filter>Source Files\p2p\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\win32.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\win32windowpicker.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\win32filesystem.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\win32regkey.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\win32securityerrors.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\win32socketinit.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\asyncfile.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\asynchttprequest.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\asyncsocket.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\asynctcpsocket.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\asyncudpsocket.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\autodetectproxy.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\bandwidthsmoother.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\base64.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\basicpacketsocketfactory.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\bytebuffer.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\checks.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\common.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\cpumonitor.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\crc32.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\diskcache.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\event.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\filelock.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\fileutils.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\firewallsocketserver.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\flags.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\helpers.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\host.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\httpbase.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\httpclient.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\httpcommon.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\httprequest.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\httpserver.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\ipaddress.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\logging.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\md5.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\messagedigest.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\messagehandler.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\messagequeue.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\multipart.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\natserver.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\natsocketfactory.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\nattypes.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\nethelpers.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\network.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\nssidentity.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\nssstreamadapter.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\openssladapter.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\openssldigest.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\opensslidentity.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\opensslstreamadapter.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\optionsfile.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\pathutils.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\physicalsocketserver.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\proxydetect.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\proxyinfo.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\proxyserver.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\ratelimiter.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\ratetracker.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\sha1.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\sharedexclusivelock.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\signalthread.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\socketadapters.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\socketaddress.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\socketaddresspair.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\socketpool.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\socketstream.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\ssladapter.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\sslidentity.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\sslsocketfactory.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\sslstreamadapter.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\sslstreamadapterhelper.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\stream.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\stringencode.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\stringutils.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\systeminfo.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\task.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\taskparent.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\taskrunner.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\testclient.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\thread.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\timeutils.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\timing.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\transformadapter.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\urlencode.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\versionparsing.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\base\virtualsocketserver.cc">
+      <Filter>Source Files\base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\xmpp\xmppauth.cc">
+      <Filter>Source Files\xmpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\talk\sound\nullsoundsystemfactory.cc">
+      <Filter>Source Files\sound</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
