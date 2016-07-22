@@ -1,0 +1,12 @@
+ipch
+Debug
+Release
+obj
+*.opensdf
+*.suo
+*.sdf
+*.log
+*.dmp
+*.vcxproj.user
+*.txt
+*.log
