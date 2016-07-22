@@ -29,6 +29,10 @@
 #define MSILBC_LIBRARY "/usr/lib/mediastreamer/plugins/libmsilbc.so"
 #endif
 
+#define PORT_UNUSED -1
+#define PORT_FIX_LOCAL_RTP 2000
+#define PORT_FREE_LOCAL_RTP -1
+
 // LinphoneMediaEngine is a Linphone implementation of MediaEngine
 extern "C" {
 #include <mediastreamer2/mediastream.h>
@@ -56,7 +60,7 @@ namespace cricket {
 ///////////////////////////////////////////////////////////////////////////
 LinphoneMediaEngine::LinphoneMediaEngine(const std::string& ringWav,  const std::string& callWav) : ring_wav_(ringWav), call_wav_(callWav) { }
 
-bool LinphoneMediaEngine::Init() {
+bool LinphoneMediaEngine::Init(talk_base::Thread* worker_thread) {
   ortp_init();
   ms_init();
 
@@ -134,15 +138,18 @@ LinphoneVoiceChannel::LinphoneVoiceChannel(LinphoneMediaEngine*eng)
     : pt_(-1),
       audio_stream_(0),
       engine_(eng),
-      ring_stream_(0)
+      ring_stream_(0),
+      local_rtp_port_(PORT_UNUSED)
 {
 
-  talk_base::Thread *thread = talk_base::ThreadManager::CurrentThread();
+  talk_base::Thread *thread = talk_base::ThreadManager::Instance()->CurrentThread();
   talk_base::SocketServer *ss = thread->socketserver();
   socket_.reset(ss->CreateAsyncSocket(SOCK_DGRAM));
-
-  socket_->Bind(talk_base::SocketAddress("localhost",3000));
+  socket_->Bind(talk_base::SocketAddress("127.0.0.1",3000));
   socket_->SignalReadEvent.connect(this, &LinphoneVoiceChannel::OnIncomingData);
+
+  //If you want to choose some free port by function, use 'PORT_FREE_LOCAL_RTP' instead of 'PORT_FIX_LOCAL_RTP'.
+  audio_stream_ = audio_stream_new(PORT_FIX_LOCAL_RTP, 0, false); 
 
 }
 
@@ -195,7 +202,20 @@ bool LinphoneVoiceChannel::SetSendCodecs(const std::vector<AudioCodec>& codecs) 
       StopRing();
       LOG(LS_INFO) << "Using " << i->name << "/" << i->clockrate;
       pt_ = i->id;
-      audio_stream_ = audio_stream_start(&av_profile, 2000, "127.0.0.1", 3000, i->id, 250, 0);
+
+      MSSndCard *playcard = ms_snd_card_manager_get_default_playback_card(ms_snd_card_manager_get());
+      if (!playcard)
+        return false;
+
+      MSSndCard *captcard = ms_snd_card_manager_get_default_capture_card(ms_snd_card_manager_get());
+      if (!captcard)
+        return false;
+
+      if (audio_stream_start_now(audio_stream_, &av_profile, "127.0.0.1", 3000, 3001, pt_, 250, playcard, captcard, 0))
+        return false;
+
+      local_rtp_port_ = rtp_session_get_local_port(audio_stream_get_rtp_session(audio_stream_));
+
       first = false;
     }
   }
@@ -205,7 +225,19 @@ bool LinphoneVoiceChannel::SetSendCodecs(const std::vector<AudioCodec>& codecs) 
     // We're being asked to set an empty list of codecs. This will only happen when
     // working with a buggy client; let's try PCMU.
     LOG(LS_WARNING) << "Received empty list of codces; using PCMU/8000";
-    audio_stream_ = audio_stream_start(&av_profile, 2000, "127.0.0.1", 3000, 0, 250, 0);
+
+    MSSndCard *playcard = ms_snd_card_manager_get_default_playback_card(ms_snd_card_manager_get());
+    if (!playcard)
+        return false;
+
+    MSSndCard *captcard = ms_snd_card_manager_get_default_capture_card(ms_snd_card_manager_get());
+    if (!captcard)
+        return false;
+
+    if (audio_stream_start_now(audio_stream_, &av_profile, "127.0.0.1", 3000, 3001, pt_, 250, playcard, captcard, 0))
+        return false;
+
+    local_rtp_port_ = rtp_session_get_local_port(audio_stream_get_rtp_session(audio_stream_));
   }
 
   return true;
@@ -216,18 +248,27 @@ bool LinphoneVoiceChannel::SetSend(SendFlags flag) {
   return true;
 }
 
+bool LinphoneVoiceChannel::AddSendStream(const StreamParams& sp) {
+  LOG(LS_INFO) << "linphone:: SET send stream ssrc: " << sp.first_ssrc();
+  rtp_session_set_ssrc(audio_stream_get_rtp_session(audio_stream_), sp.first_ssrc());
+  return true;
+}
+
 void LinphoneVoiceChannel::OnPacketReceived(talk_base::Buffer* packet) {
   const void* data = packet->data();
   int len = packet->length();
   uint8 buf[2048];
   memcpy(buf, data, len);
 
+  if(local_rtp_port_ == PORT_UNUSED)
+      return;
+
   /* We may receive packets with payload type 13: comfort noise. Linphone can't
    * handle them, so let's ignore those packets.
    */
   int payloadtype = buf[1] & 0x7f;
   if (play_ && payloadtype != 13)
-    socket_->SendTo(buf, len, talk_base::SocketAddress("localhost",2000));
+      socket_->SendTo(buf, len, talk_base::SocketAddress("127.0.0.1", local_rtp_port_));
 }
 
 void LinphoneVoiceChannel::StartRing(bool bIncomingCall)

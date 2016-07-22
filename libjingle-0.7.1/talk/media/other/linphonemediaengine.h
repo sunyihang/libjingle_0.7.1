@@ -63,7 +63,7 @@ class LinphoneMediaEngine : public MediaEngineInterface {
   }
 
   // Implement pure virtual methods of MediaEngine.
-  virtual bool Init();
+  virtual bool Init(talk_base::Thread* worker_thread);
   virtual void Terminate();
   virtual int GetCapabilities();
   virtual VoiceMediaChannel* CreateChannel();
@@ -71,6 +71,7 @@ class LinphoneMediaEngine : public MediaEngineInterface {
   virtual SoundclipMedia* CreateSoundclip() { return NULL; }
   virtual bool SetAudioOptions(int options) { return true; }
   virtual bool SetVideoOptions(int options) { return true; }
+  virtual bool SetAudioDelayOffset(int offset) { return true; }
   virtual bool SetDefaultVideoEncoderConfig(const VideoEncoderConfig& config) {
     return true;
   }
@@ -78,6 +79,16 @@ class LinphoneMediaEngine : public MediaEngineInterface {
     return true;
   }
   virtual bool SetVideoCaptureDevice(const Device* cam_device) { return true; }
+  virtual bool SetVideoCapturer(VideoCapturer* /*capturer*/) {
+    return true;
+  }
+  virtual VideoCapturer* GetVideoCapturer() const {
+    return NULL;
+  }
+  virtual bool GetOutputVolume(int* level) {
+    *level = 0;
+    return true;
+  }
   virtual bool SetOutputVolume(int level) { return true; }
   virtual int GetInputLevel() { return 0; }
   virtual bool SetLocalMonitor(bool enable) { return true; }
@@ -90,10 +101,39 @@ class LinphoneMediaEngine : public MediaEngineInterface {
   virtual const std::vector<VideoCodec>& video_codecs() {
     return video_codecs_;
   }
+  virtual const std::vector<RtpHeaderExtension>& audio_rtp_header_extensions() {
+    return audio_rtp_header_extensions_;
+  }
+  virtual const std::vector<RtpHeaderExtension>& video_rtp_header_extensions() {
+    return video_rtp_header_extensions_;
+  }
   virtual bool FindAudioCodec(const AudioCodec& codec);
   virtual bool FindVideoCodec(const VideoCodec& codec) { return true; }
   virtual void SetVoiceLogging(int min_sev, const char* filter) {}
   virtual void SetVideoLogging(int min_sev, const char* filter) {}
+  virtual bool RegisterVideoProcessor(VideoProcessor* processor) {
+    return true;
+  }
+  virtual bool UnregisterVideoProcessor(VideoProcessor* processor) {
+    return true;
+  }
+  virtual bool RegisterVoiceProcessor(uint32 ssrc,
+                                      VoiceProcessor* processor,
+                                      MediaProcessorDirection direction) {
+    return true;
+  }
+  virtual bool UnregisterVoiceProcessor(uint32 ssrc,
+                                        VoiceProcessor* processor,
+                                        MediaProcessorDirection direction) {
+    return true;
+  }
+  VideoFormat GetStartCaptureFormat() const {
+    return VideoFormat();
+  }
+  virtual sigslot::repeater2<VideoCapturer*, CaptureState>&
+      SignalVideoCaptureStateChange() {
+    return signal_state_change_;
+  }
 
   std::string GetRingWav(){return ring_wav_;}
   std::string GetCallWav(){return call_wav_;}
@@ -107,6 +147,10 @@ class LinphoneMediaEngine : public MediaEngineInterface {
   std::string video_output_filename_;
   std::vector<AudioCodec> voice_codecs_;
   std::vector<VideoCodec> video_codecs_;
+  std::vector<RtpHeaderExtension> audio_rtp_header_extensions_;
+  std::vector<RtpHeaderExtension> video_rtp_header_extensions_;
+  sigslot::repeater2<VideoCapturer*, CaptureState>
+     signal_state_change_;
 
   std::string ring_wav_;
   std::string call_wav_;
@@ -128,25 +172,42 @@ class LinphoneVoiceChannel : public VoiceMediaChannel {
   virtual bool RemoveStream(uint32 ssrc) { return true; }
   virtual bool GetActiveStreams(AudioInfo::StreamList* actives) { return true; }
   virtual int GetOutputLevel() { return 0; }
+  virtual int GetTimeSinceLastTyping() { return -1; }
+  virtual void SetTypingDetectionParameters(int time_window,
+    int cost_per_typing, int reporting_threshold, int penalty_decay,
+    int type_event_delay) {}
   virtual bool SetOutputScaling(uint32 ssrc, double left, double right) {
     return false;
   }
   virtual bool GetOutputScaling(uint32 ssrc, double* left, double* right) {
     return false;
   }
-  virtual void SetRingbackTone(const char* buf, int len) {}
-  virtual bool PlayRingbackTone(bool play, bool loop) { return true; }
+  virtual bool SetRingbackTone(const char* buf, int len) { return true; }
+  virtual bool PlayRingbackTone(uint32 ssrc, bool play, bool loop) { return true; }
+  virtual bool InsertDtmf(uint32 ssrc, int event, int duration, int flags) { return false; }
   virtual bool PressDTMF(int event, bool playout) { return true; }
   virtual bool GetStats(VoiceMediaInfo* info) { return true; }
 
   // Implement pure virtual methods of MediaChannel.
   virtual void OnPacketReceived(talk_base::Buffer* packet);
   virtual void OnRtcpReceived(talk_base::Buffer* packet) {}
+  virtual bool AddSendStream(const StreamParams& sp);
+  virtual bool RemoveSendStream(uint32 ssrc) { return true; }
+  virtual bool AddRecvStream(const StreamParams& sp) { return true; }
+  virtual bool RemoveRecvStream(uint32 ssrc) { return true; }
+  virtual bool MuteStream(uint32 ssrc, bool on) { return false; }
   virtual void SetSendSsrc(uint32 id) {}  // TODO: change RTP packet?
   virtual bool SetRtcpCName(const std::string& cname) { return true; }
   virtual bool Mute(bool on) { return mute_; }
   virtual bool SetSendBandwidth(bool autobw, int bps) { return true; }
-  virtual bool SetOptions(int options) { return true; }
+  virtual bool SetOptions(const AudioOptions& options ) {
+      options_ = options;
+      return true; 
+  }
+  virtual bool GetOptions(AudioOptions* options) const {
+    *options = options_;
+    return true;
+  }
   virtual bool SetRecvRtpHeaderExtensions(
       const std::vector<RtpHeaderExtension>& extensions) { return true; }
   virtual bool SetSendRtpHeaderExtensions(
@@ -164,6 +225,9 @@ class LinphoneVoiceChannel : public VoiceMediaChannel {
   RingStream* ring_stream_;
   talk_base::scoped_ptr<talk_base::AsyncSocket> socket_;
   void OnIncomingData(talk_base::AsyncSocket *s);
+
+  AudioOptions options_;
+  int local_rtp_port_;
 
   DISALLOW_COPY_AND_ASSIGN(LinphoneVoiceChannel);
 };
