@@ -2,6 +2,7 @@ ipch
 Debug
 Release
 obj
+bin/
 *.opensdf
 *.suo
 *.sdf
