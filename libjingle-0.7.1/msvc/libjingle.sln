@@ -18,6 +18,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "login", "login.vcxproj", "{
 		{2FCC9B2C-1645-47A5-A024-DE75EAEBB1EB} = {2FCC9B2C-1645-47A5-A024-DE75EAEBB1EB}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chat", "chat.vcxproj", "{D4AD5999-75B2-4D3A-AD11-33F3EAFED8BA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2FCC9B2C-1645-47A5-A024-DE75EAEBB1EB} = {2FCC9B2C-1645-47A5-A024-DE75EAEBB1EB}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -40,6 +45,10 @@ Global
 		{68D0AA8D-353C-4093-95C6-602594D868DF}.Debug|Win32.Build.0 = Debug|Win32
 		{68D0AA8D-353C-4093-95C6-602594D868DF}.Release|Win32.ActiveCfg = Release|Win32
 		{68D0AA8D-353C-4093-95C6-602594D868DF}.Release|Win32.Build.0 = Release|Win32
+		{D4AD5999-75B2-4D3A-AD11-33F3EAFED8BA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D4AD5999-75B2-4D3A-AD11-33F3EAFED8BA}.Debug|Win32.Build.0 = Debug|Win32
+		{D4AD5999-75B2-4D3A-AD11-33F3EAFED8BA}.Release|Win32.ActiveCfg = Release|Win32
+		{D4AD5999-75B2-4D3A-AD11-33F3EAFED8BA}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
