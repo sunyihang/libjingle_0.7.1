@@ -401,7 +401,8 @@ public:
 
   bool ProcessStream(talk_base::StreamInterface* stream,
                      const std::string& filename, bool send) {
-    ASSERT(file_);
+    //file_ can be null
+    //ASSERT(file_);
     sending_ = send;
     file_.reset(new talk_base::FileStream);
     buffer_len_ = 0;
