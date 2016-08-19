@@ -5,6 +5,5 @@
 ::for best performance, copy files from the current directory or lower.
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-.\bin\debug\pcp.exe --xmpp-host=YourHost --xmpp-port=5222 --xmpp-use-tls=false test1@YourHost .\test.txt test3@YourHost/pcp:test01.txt
+.\pcp.exe --verbose --xmpp-host=YourHost --xmpp-port=5222 --xmpp-use-tls=true test2@YourHost
 
-pause()

@@ -27,6 +27,7 @@
 #include "talk/base/ssladapter.h"
 #include "talk/base/stringutils.h"
 #include "talk/base/thread.h"
+#include "talk/base/pathutils.h"
 #include "talk/p2p/base/sessionmanager.h"
 #include "talk/p2p/client/autoportallocator.h"
 #include "talk/p2p/client/sessionmanagertask.h"
@@ -558,6 +559,11 @@ private:
   size_t buffer_len_;
 };
 
+void Print(const char* chars) {
+  printf("%s", chars);
+  fflush(stdout);
+}
+
 int main(int argc, char **argv) {
   talk_base::LogMessage::LogThreads();
   talk_base::LogMessage::LogTimestamps();
@@ -627,6 +633,16 @@ int main(int argc, char **argv) {
   std::cin >> gUserPass.password();
   SetConsoleEcho(true);
   std::cout << std::endl;
+
+  //file log
+  std::string log = "pcp_log.xml";
+  talk_base::StreamInterface* stream = talk_base::Filesystem::OpenFile(log, "a");
+  if (stream) {
+      talk_base::LogMessage::LogToStream(stream, talk_base::LS_VERBOSE);
+  } else {
+      Print(("Cannot open debug log " + log + "\n").c_str());
+      return 1;
+  }
 
   talk_base::InitializeSSL();
   // Log in.
